@@ -48,19 +48,19 @@
 
                 <div class="users_chats">
 
-                    <div class="user_chat_card">
+                    <div v-for="(element, index) in arrayUtentiChat" class="user_chat_card">
                         <div class="user_info">
-                            <img class="img_users" src="img/avatar_1.jpg" alt="">
+                            <img class="img_users" :src="'img/' + element.imgUtente"alt="">
                             <div>
-                                <div class="name_user">Michele</div>
-                                <div class="last_message">Ultimo messaggio inviato</div>
+                                <div class="name_user">{{ element.nome }}</div>
+                                <div class="last_message">{{ element.lastMessage }}</div>
 
                             </div>
                         </div>
                         <div class="time">12:00</div>
                     </div>
 
-                    
+
                 </div>
             </div>
 
@@ -73,13 +73,34 @@
                             <div class="last_message">Ultimo messaggio inviato alle 12:00</div>
 
                         </div>
-                    </div>    
+                    </div>
                     <div class="icons">
                         <i class="icone fa-solid fa-magnifying-glass"></i>
                         <i class="icone fa-solid fa-link"></i>
                         <i class="icone fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
+
+                <div class="container_messaggi">
+                    <ul class="lista_messaggi">
+                        <li class="my_message">Hai portato a spasso il cane <span class="timing_message">12.00</span>
+                        </li>
+                        <li class="my_message">Ricordati di stendere i panni <span class="timing_message">12.00</span>
+                        </li>
+                        <li class="your_message">Tutto fatto! <span class="timing_message">12.00</span></li>
+
+
+                    </ul>
+                </div>
+
+                <div class="text_bar">
+                    <button class="emoticon_button"><i class="fa-regular fa-face-smile"></i></button>
+                    <input type="text" name="write_message" id="write_message" placeholder="Scrivi un messaggio">
+                    <button class="emoticon_button"><i class="fa-solid fa-microphone"></i></button>
+                </div>
+
+
+
 
             </div>
 

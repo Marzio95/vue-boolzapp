@@ -11,6 +11,7 @@ html{
 .container{
     background-color: lightgray;
     position: relative;
+    height: 100vh;
 }
 
 .green_bar{
@@ -25,7 +26,6 @@ html{
     top: 2rem;
     left: 8rem;
     right: 8rem;
-    border: 1px solid black;
     display: flex;
 }
 
@@ -125,6 +125,7 @@ html{
     display: flex;
     justify-content: space-between;
     padding: 7px;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .user_chat_card:hover{
@@ -138,6 +139,7 @@ html{
 
 .last_message{
     font-size: 0.7rem;
+    color: gray;
 }
 
 .col_2{
@@ -145,3 +147,72 @@ html{
     background-image: url(../img/mine.jpg);
 }
 
+.lista_messaggi{
+    padding: 1.5rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.my_message{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+    width: 325px;
+    margin: 0.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 1rem;
+    position: relative;
+    border-radius: 10px;
+}
+
+.your_message{
+    background-color: white;
+    align-self: flex-start;
+    width: 325px;
+    margin: 0.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 1rem;
+    position: relative;
+    border-radius: 10px;
+}
+
+.timing_message{
+    position: absolute;
+    right: 8px;
+    bottom: -13px;
+    font-size: small;
+    color: gray;
+}
+
+.container_messaggi{
+    overflow-y: scroll;
+    height: calc(100% - 8rem);
+}
+
+.text_bar{
+    height: 4rem;
+    background-color:#eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#write_message{
+    width: 740px;
+    height: 2.5rem;
+    border: none;
+    padding-left: 10px;
+}
+
+.emoticon_button{
+    border: none;
+    height: 2rem;
+    font-size: 1.3rem;
+    color: gray;
+}
+
+button{
+    cursor: pointer;
+}
