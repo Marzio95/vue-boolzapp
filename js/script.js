@@ -1,7 +1,7 @@
 const app = new Vue({
     el: '#root',
     data: {
-
+        arrayIndex: 0,
         newMessage: '',
         arrayUtentiChat: [
             {
@@ -10,7 +10,7 @@ const app = new Vue({
                 lastMessage: 'Ultimo messaggio inviato',
                 messaggiRicevuti: [
                     'Hai portato a spasso il cane?',
-                    'Ricordati di i panni'  
+                    'Ricordati di stendere panni'
                 ],
                 messaggiInviati: [
                     'Tutto fatto!'
@@ -59,17 +59,19 @@ const app = new Vue({
 
     }, methods: {
         messaggioInviato() {
-            let  listaMessaggi = document.querySelector('.lista_messaggi')
+            const now = new Date();
+            const current = now.getHours() + ':' + now.getMinutes();
+            let listaMessaggi = document.querySelector('.lista_messaggi')
             let message = document.createElement('li');
             message.classList.add('my_message');
-            message.innerHTML =   `<div> ${this.newMessage.trim()} </div> <span class="timing_message">12.00</span>`
-            if (this.newMessage.trim() == ''){
-                
+            message.innerHTML = `<div> ${this.newMessage.trim()} </div> <span class="timing_message">${current}</span>`
+            if (this.newMessage.trim() == '') {
+
             } else {
                 listaMessaggi.append(message);
             }
             this.newMessage = '';
-            
+
         }
     }
 
