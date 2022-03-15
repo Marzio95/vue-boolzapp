@@ -26,10 +26,11 @@ html{
     left: 8rem;
     right: 8rem;
     border: 1px solid black;
+    display: flex;
 }
 
 .col_1{
-    width: 400px;
+    width: 450px;
     height: 100%;
 }
 
@@ -63,3 +64,84 @@ html{
 .name_user{
     font-weight: 600;
 }
+
+.notifiche{
+    background-color: #8edafc;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.white{
+    background-color: white;
+    color: #8edafc;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.bell{
+    margin-left: 20px;
+}
+
+.messages_notifiche{
+    display: flex;
+    flex-direction: column;
+}
+
+.underline{
+    text-decoration: underline;
+    font-size: 0.7rem;
+    color: gray;
+}
+
+.search_bar{
+    height: 3rem;
+    background-color:#fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search_user{
+    width: 86%;
+    height: 2rem;
+    border: none;
+}
+
+.search_button{
+    width: 12%;
+    height: 2rem;
+    background-color: white;
+    border: none;
+}
+
+.users_chats{
+    height: calc(100% - 12rem);
+    overflow-y: scroll;
+}
+
+.user_chat_card{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
+
+.user_chat_card:hover{
+    background-color:#eaeaea;
+}
+
+.time{
+    color: gray;
+    font-size: 0.8rem;
+}
+
+.last_message{
+    font-size: 0.7rem;
+}
+
+.col_2{
+    width: calc(100% - 450px);
+    background-image: url(../img/mine.jpg);
+}
+
