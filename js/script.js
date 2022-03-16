@@ -73,7 +73,9 @@ const app = new Vue({
             }
             this.newMessage = '';
 
-            setTimeout(this.messaggioRicevuto(),1000);
+    
+            setTimeout(this.messaggioRicevuto, 2000);
+        
 
 
         },
