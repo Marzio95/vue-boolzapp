@@ -1,19 +1,32 @@
 const app = new Vue({
     el: '#root',
     data: {
-        arrayIndex: 0,
+        indiceUtenteAttivo: 0,
         newMessage: '',
         arrayUtentiChat: [
             {
                 nome: 'Michele',
                 imgUtente: 'avatar_1.jpg',
                 lastMessage: 'Ultimo messaggio inviato',
-                messaggiRicevuti: [
-                    'Hai portato a spasso il cane?',
-                    'Ricordati di stendere panni'
-                ],
-                messaggiInviati: [
-                    'Tutto fatto!'
+                chat: [
+                    {
+                        testo: 'hai portato',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'hai portato il dogo',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'nope',
+                        ora: '17.00',
+                        mittente: false,
+
+                    },
                 ]
 
             },
@@ -21,36 +34,193 @@ const app = new Vue({
                 nome: 'Fabio',
                 imgUtente: 'avatar_2.jpg',
                 lastMessage: 'Ultimo messaggio inviato',
+                chat: [
+                    {
+                        testo: 'hai portato',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'hai portato il dogo',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'nope',
+                        ora: '17.00',
+                        mittente: false,
+
+                    },
+                ]
+
+
             },
             {
                 nome: 'Samuele',
                 imgUtente: 'avatar_3.jpg',
                 lastMessage: 'Ultimo messaggio inviato',
+                chat: [
+                    {
+                        testo: 'hai portato',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'hai portato il dogo',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'nope',
+                        ora: '17.00',
+                        mittente: false,
+
+                    },
+                ]
+
+
             },
             {
                 nome: 'Alessandro B.',
                 imgUtente: 'avatar_4.jpg',
                 lastMessage: 'Ultimo messaggio inviato',
+                chat: [
+                    {
+                        testo: 'hai portato',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'hai portato il dogo',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'nope',
+                        ora: '17.00',
+                        mittente: false,
+
+                    },
+                ]
+
+
             },
             {
                 nome: 'Alessandro L.',
                 imgUtente: 'avatar_5.jpg',
                 lastMessage: 'Ultimo messaggio inviato',
+                chat: [
+                    {
+                        testo: 'hai portato',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'hai portato il dogo',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'nope',
+                        ora: '17.00',
+                        mittente: false,
+
+                    },
+                ]
+
+
             },
             {
                 nome: 'Claudia',
                 imgUtente: 'avatar_6.jpg',
                 lastMessage: 'Ultimo messaggio inviato',
+                chat: [
+                    {
+                        testo: 'hai portato',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'hai portato il dogo',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'nope',
+                        ora: '17.00',
+                        mittente: false,
+
+                    },
+                ]
+
+
             },
             {
                 nome: 'Federico',
                 imgUtente: 'avatar_7.jpg',
                 lastMessage: 'Ultimo messaggio inviato',
+                chat: [
+                    {
+                        testo: 'hai portato',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'hai portato il dogo',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'nope',
+                        ora: '17.00',
+                        mittente: false,
+
+                    },
+                ]
+
+
+
+
             },
             {
                 nome: 'Davide',
                 imgUtente: 'avatar_8.jpg',
                 lastMessage: 'Ultimo messaggio inviato',
+                chat: [
+                    {
+                        testo: 'hai portato',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'hai portato il dogo',
+                        ora: '17.00',
+                        mittente: true,
+
+                    },
+                    {
+                        testo: 'nope',
+                        ora: '17.00',
+                        mittente: false,
+
+                    },
+                ]
+
+
+
             },
 
 
@@ -58,24 +228,26 @@ const app = new Vue({
 
 
     }, methods: {
-        messaggioInviato() {
+        messaggioInviato(indiceUtenteAttivo) {
             const now = new Date();
             const current = now.getHours() + ':' + now.getMinutes();
 
-            let listaMessaggi = document.querySelector('.lista_messaggi')
-            let message = document.createElement('li');
-            message.classList.add('my_message');
-            message.innerHTML = `<div> ${this.newMessage.trim()} </div> <span class="timing_message">${current}</span>`
             if (this.newMessage.trim() == '') {
 
             } else {
-                listaMessaggi.append(message);
+                this.arrayUtentiChat[indiceUtenteAttivo].chat.push(
+                    {
+                        testo: this.newMessage,
+                        ora: current,
+                        mittente: true,
+                    }
+                );
             }
             this.newMessage = '';
 
-    
-            setTimeout(this.messaggioRicevuto, 2000);
-        
+
+            setTimeout(this.messaggioRicevuto, 1000);
+
 
 
         },
@@ -83,12 +255,19 @@ const app = new Vue({
             const now = new Date();
             const current = now.getHours() + ':' + now.getMinutes();
 
-            let listaMessaggi = document.querySelector('.lista_messaggi')
-            let respondMessage = document.createElement('li');
-            respondMessage.classList.add('your_message');
-            respondMessage.innerHTML = `<div>OK</div> <span class="timing_message">${current}</span>`
-            listaMessaggi.append(respondMessage);
+            this.arrayUtentiChat[this.indiceUtenteAttivo].chat.push(
+                {
+                    testo: 'OK',
+                    ora: current,
+                    mittente: false,
+                });
+        },
+        cambioUtente(index) {
+            this.indiceUtenteAttivo = index;
+
         }
+
+
     }
 
 }

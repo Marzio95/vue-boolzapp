@@ -18,7 +18,12 @@
     <div class="container">
         <div class="green_bar"></div>
         <div id="root">
+
+            <!-- COLONNA DI SINISTRA -->
             <div class="col_1">
+
+
+                <!-- SEZIONE PERSONALE USER -->
                 <div class="user">
                     <div class="user_info">
                         <img class="img_users" src="img/avatar_io.jpg" alt="">
@@ -31,6 +36,8 @@
                     </div>
                 </div>
 
+
+                <!-- SEZIONE SILENZIA NOTIFICHE -->
                 <div class="notifiche">
                     <div class="bell">
                         <i class="img_users white fa-solid fa-bell-slash"></i>
@@ -41,19 +48,26 @@
                     </div>
                 </div>
 
+
+                <!-- SEARCH BAR PER VARIE CHAT -->
                 <div class="search_bar">
                     <button class="search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
                     <input type="text" name="search_user" id="search_user" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
+
+
+
+                <!-- SEZIONE DIVERSE CHAT DEI DIVERSI UTENTI -->
                 <div class="users_chats">
 
-                    <div v-for="(element, index) in arrayUtentiChat" class="user_chat_card">
+                    <div v-for="(element, index) in arrayUtentiChat" class="user_chat_card"
+                        @click="cambioUtente(index)">
                         <div class="user_info">
-                            <img class="img_users" :src="'img/' + element.imgUtente"alt="">
+                            <img class="img_users" :src="'img/' + arrayUtentiChat[index].imgUtente" alt="">
                             <div>
                                 <div class="name_user">{{ element.nome }}</div>
-                                <div class="last_message">{{ element.lastMessage }}</div>
+                                <div class="last_message">{{ element.chat[element.chat.length - 1].testo }}</div>
 
                             </div>
                         </div>
@@ -64,13 +78,19 @@
                 </div>
             </div>
 
+
+
+            <!-- COLONNA DI DESTRA -->
             <div class="col_2">
+
+
+                <!-- SEZIONE UTENTE ATTIVO -->
                 <div class="user">
                     <div class="user_info">
-                        <img class="img_users" src="img/avatar_1.jpg" alt="">
+                        <img class="img_users" :src="'img/' + arrayUtentiChat[indiceUtenteAttivo].imgUtente" alt="">
                         <div>
-                            <div class="name_user">Michele</div>
-                            <div class="last_message">Ultimo messaggio inviato alle 12:00</div>
+                            <div class="name_user">{{ arrayUtentiChat[indiceUtenteAttivo].nome }}</div>
+                            <div class="last_message">Ultimo messaggio inviato alle {{arrayUtentiChat[indiceUtenteAttivo].chat[arrayUtentiChat[indiceUtenteAttivo].chat.length - 1].ora}}</div>
 
                         </div>
                     </div>
@@ -81,32 +101,29 @@
                     </div>
                 </div>
 
+
+
+                <!-- CONTENITORE MESSAGGI  -->
                 <div class="container_messaggi">
                     <ul class="lista_messaggi">
-                        <li v-for="(element,index) in arrayUtentiChat" v-for="(element,index) in messaggiRicevuti" class="my_message"><div> {{ element }} </div> <span class="timing_message">12.00</span>
+                        <li v-for="(element,index) in arrayUtentiChat[indiceUtenteAttivo].chat"
+                            :key="element.messaggiRicevuti"
+                            :class="(element.mittente == true) ? 'my_message' : 'your_message'">
+                            <div> {{ element.testo }} </div> <span class="timing_message">{{ element.ora }}</span>
                         </li>
-                        <li class="my_message"><div>Ricordati di stendere i panni</div> <span class="timing_message">12.00</span>
-                        </li>
-                        <li class="your_message"><div>Tutto fatto!</div> <span class="timing_message">12.00</span></li>
-
-
                     </ul>
                 </div>
 
+
+
+                <!-- BARRA INSERIMENTO NUOVO MESSAGGIO -->
                 <div class="text_bar">
                     <button class="emoticon_button"><i class="fa-regular fa-face-smile"></i></button>
-                    <input @keyup.enter="messaggioInviato()" v-model="newMessage" type="text" name="write_message" id="write_message" placeholder="Scrivi un messaggio">
+                    <input @keyup.enter="messaggioInviato(indiceUtenteAttivo)" v-model="newMessage" type="text"
+                        name="write_message" id="write_message" placeholder="Scrivi un messaggio">
                     <button class="emoticon_button"><i class="fa-solid fa-microphone"></i></button>
                 </div>
-
-
-
-
             </div>
-
-
-
-
 
 
         </div>
@@ -122,7 +139,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.3.1/luxon.min.js" integrity="sha512-Nw0Abk+Ywwk5FzYTxtB70/xJRiCI0S2ORbXI3VBlFpKJ44LM6cW2WxIIolyKEOxOuMI90GIfXdlZRJepu7cczA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.3.1/luxon.min.js"
+        integrity="sha512-Nw0Abk+Ywwk5FzYTxtB70/xJRiCI0S2ORbXI3VBlFpKJ44LM6cW2WxIIolyKEOxOuMI90GIfXdlZRJepu7cczA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
