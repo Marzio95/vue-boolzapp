@@ -10,13 +10,13 @@ const app = new Vue({
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
-                        testo: 'hai portato',
+                        testo: 'hai comprato il biglietto della lotteria?',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'hai portato il dogo',
+                        testo: 'hai vinto?',
                         ora: '17.00',
                         mittente: true,
 
@@ -36,19 +36,19 @@ const app = new Vue({
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
-                        testo: 'hai portato',
+                        testo: "Come sta andando l'esercizio?",
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'hai portato il dogo',
+                        testo: 'Sei il più forte a scrivere codice???',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'nope',
+                        testo: 'Magari...',
                         ora: '17.00',
                         mittente: false,
 
@@ -63,19 +63,19 @@ const app = new Vue({
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
-                        testo: 'hai portato',
+                        testo: 'Lavori stasera?',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'hai portato il dogo',
+                        testo: 'Andiamo al cinema?',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'nope',
+                        testo: 'Certo, alle 21 lì.',
                         ora: '17.00',
                         mittente: false,
 
@@ -90,19 +90,19 @@ const app = new Vue({
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
-                        testo: 'hai portato',
+                        testo: 'Partitta oggi?',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'hai portato il dogo',
+                        testo: "C'è la Roma...",
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'nope',
+                        testo: 'Avoja',
                         ora: '17.00',
                         mittente: false,
 
@@ -117,19 +117,19 @@ const app = new Vue({
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
-                        testo: 'hai portato',
+                        testo: 'Come và?',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'hai portato il dogo',
+                        testo: 'Tutto bene?',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'nope',
+                        testo: 'Come al solito',
                         ora: '17.00',
                         mittente: false,
 
@@ -144,19 +144,19 @@ const app = new Vue({
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
-                        testo: 'hai portato',
+                        testo: 'Ciao',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'hai portato il dogo',
+                        testo: 'Da quanto tempo...',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'nope',
+                        testo: 'Sono passati anni',
                         ora: '17.00',
                         mittente: false,
 
@@ -171,19 +171,19 @@ const app = new Vue({
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
-                        testo: 'hai portato',
+                        testo: 'Vieni stasera?',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'hai portato il dogo',
+                        testo: 'Festeggiamo...',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'nope',
+                        testo: 'Dimmi dove e quando',
                         ora: '17.00',
                         mittente: false,
 
@@ -200,19 +200,19 @@ const app = new Vue({
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
-                        testo: 'hai portato',
+                        testo: 'Davide',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'hai portato il dogo',
+                        testo: 'Dove sono i miei soldi?',
                         ora: '17.00',
                         mittente: true,
 
                     },
                     {
-                        testo: 'nope',
+                        testo: 'Non li avrai mai',
                         ora: '17.00',
                         mittente: false,
 
