@@ -11,19 +11,19 @@ const app = new Vue({
                 chat: [
                     {
                         testo: 'hai comprato il biglietto della lotteria?',
-                        ora: '17.00',
+                        ora: '12.00',
                         mittente: true,
 
                     },
                     {
                         testo: 'hai vinto?',
-                        ora: '17.00',
+                        ora: '17.30',
                         mittente: true,
 
                     },
                     {
                         testo: 'nope',
-                        ora: '17.00',
+                        ora: '21.00',
                         mittente: false,
 
                     },
@@ -37,19 +37,19 @@ const app = new Vue({
                 chat: [
                     {
                         testo: "Come sta andando l'esercizio?",
-                        ora: '17.00',
+                        ora: '11.00',
                         mittente: true,
 
                     },
                     {
                         testo: 'Sei il più forte a scrivere codice???',
-                        ora: '17.00',
+                        ora: '19.00',
                         mittente: true,
 
                     },
                     {
                         testo: 'Magari...',
-                        ora: '17.00',
+                        ora: '22.00',
                         mittente: false,
 
                     },
@@ -64,7 +64,7 @@ const app = new Vue({
                 chat: [
                     {
                         testo: 'Lavori stasera?',
-                        ora: '17.00',
+                        ora: '10.00',
                         mittente: true,
 
                     },
@@ -76,7 +76,7 @@ const app = new Vue({
                     },
                     {
                         testo: 'Certo, alle 21 lì.',
-                        ora: '17.00',
+                        ora: '23.00',
                         mittente: false,
 
                     },
@@ -91,19 +91,19 @@ const app = new Vue({
                 chat: [
                     {
                         testo: 'Partitta oggi?',
-                        ora: '17.00',
+                        ora: '07.00',
                         mittente: true,
 
                     },
                     {
                         testo: "C'è la Roma...",
-                        ora: '17.00',
+                        ora: '09.00',
                         mittente: true,
 
                     },
                     {
                         testo: 'Avoja',
-                        ora: '17.00',
+                        ora: '11.00',
                         mittente: false,
 
                     },
@@ -118,19 +118,19 @@ const app = new Vue({
                 chat: [
                     {
                         testo: 'Come và?',
-                        ora: '17.00',
+                        ora: '10.00',
                         mittente: true,
 
                     },
                     {
                         testo: 'Tutto bene?',
-                        ora: '17.00',
+                        ora: '10.20',
                         mittente: true,
 
                     },
                     {
                         testo: 'Come al solito',
-                        ora: '17.00',
+                        ora: '10.30',
                         mittente: false,
 
                     },
@@ -151,13 +151,13 @@ const app = new Vue({
                     },
                     {
                         testo: 'Da quanto tempo...',
-                        ora: '17.00',
+                        ora: '17.03',
                         mittente: true,
 
                     },
                     {
                         testo: 'Sono passati anni',
-                        ora: '17.00',
+                        ora: '17.05',
                         mittente: false,
 
                     },
@@ -172,19 +172,19 @@ const app = new Vue({
                 chat: [
                     {
                         testo: 'Vieni stasera?',
-                        ora: '17.00',
+                        ora: '19.00',
                         mittente: true,
 
                     },
                     {
                         testo: 'Festeggiamo...',
-                        ora: '17.00',
+                        ora: '19.01',
                         mittente: true,
 
                     },
                     {
                         testo: 'Dimmi dove e quando',
-                        ora: '17.00',
+                        ora: '20.00',
                         mittente: false,
 
                     },
@@ -201,19 +201,19 @@ const app = new Vue({
                 chat: [
                     {
                         testo: 'Davide',
-                        ora: '17.00',
+                        ora: '23.00',
                         mittente: true,
 
                     },
                     {
                         testo: 'Dove sono i miei soldi?',
-                        ora: '17.00',
+                        ora: '23.01',
                         mittente: true,
 
                     },
                     {
                         testo: 'Non li avrai mai',
-                        ora: '17.00',
+                        ora: '23.59',
                         mittente: false,
 
                     },
