@@ -61,6 +61,7 @@ const app = new Vue({
         messaggioInviato() {
             const now = new Date();
             const current = now.getHours() + ':' + now.getMinutes();
+
             let listaMessaggi = document.querySelector('.lista_messaggi')
             let message = document.createElement('li');
             message.classList.add('my_message');
@@ -72,6 +73,19 @@ const app = new Vue({
             }
             this.newMessage = '';
 
+            setTimeout(this.messaggioRicevuto(),1000);
+
+
+        },
+        messaggioRicevuto() {
+            const now = new Date();
+            const current = now.getHours() + ':' + now.getMinutes();
+
+            let listaMessaggi = document.querySelector('.lista_messaggi')
+            let respondMessage = document.createElement('li');
+            respondMessage.classList.add('your_message');
+            respondMessage.innerHTML = `<div>OK</div> <span class="timing_message">${current}</span>`
+            listaMessaggi.append(respondMessage);
         }
     }
 

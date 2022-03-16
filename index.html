@@ -83,7 +83,7 @@
 
                 <div class="container_messaggi">
                     <ul class="lista_messaggi">
-                        <li v-for="(element,index) in arrayUtentiChat" v-for="(element,index) in messaggiRicevuti" class="my_message"><div> {{ element.messaggiRicevuti }} </div> <span class="timing_message">12.00</span>
+                        <li v-for="(element,index) in arrayUtentiChat" v-for="(element,index) in messaggiRicevuti" class="my_message"><div> {{ element }} </div> <span class="timing_message">12.00</span>
                         </li>
                         <li class="my_message"><div>Ricordati di stendere i panni</div> <span class="timing_message">12.00</span>
                         </li>
@@ -122,6 +122,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.3.1/luxon.min.js" integrity="sha512-Nw0Abk+Ywwk5FzYTxtB70/xJRiCI0S2ORbXI3VBlFpKJ44LM6cW2WxIIolyKEOxOuMI90GIfXdlZRJepu7cczA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
