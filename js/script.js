@@ -265,7 +265,11 @@ const app = new Vue({
         cambioUtente(index) {
             this.indiceUtenteAttivo = index;
 
+        },
+        deleteMessage(index) {
+            this.arrayUtentiChat[this.indiceUtenteAttivo].chat.splice(index, 1)
         }
+
 
 
     }

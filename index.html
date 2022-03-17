@@ -61,7 +61,7 @@
                 <!-- SEZIONE DIVERSE CHAT DEI DIVERSI UTENTI -->
                 <div class="users_chats">
 
-                    <div v-for="(element, index) in arrayUtentiChat" class="user_chat_card"
+                    <div v-for="(element, index) in arrayUtentiChat" :class="(index == indiceUtenteAttivo)? 'active' : '' " class="user_chat_card"
                         @click="cambioUtente(index)">
                         <div class="user_info">
                             <img class="img_users" :src="'img/' + arrayUtentiChat[index].imgUtente" alt="">
@@ -110,6 +110,8 @@
                             :key="element.messaggiRicevuti"
                             :class="(element.mittente == true) ? 'my_message' : 'your_message'">
                             <div> {{ element.testo }} </div> <span class="timing_message">{{ element.ora }}</span>
+                            <button class="arrow"><i class="fa-solid fa-angle-down"></i></button>
+                            <div @click="deleteMessage(index)" class="delete">Cancella messaggio</div>
                         </li>
                     </ul>
                 </div>
