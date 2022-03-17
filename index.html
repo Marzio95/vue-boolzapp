@@ -61,7 +61,8 @@
                 <!-- SEZIONE DIVERSE CHAT DEI DIVERSI UTENTI -->
                 <div class="users_chats">
 
-                    <div v-for="(element, index) in arrayUtentiChat" :class="(index == indiceUtenteAttivo)? 'active' : '' " class="user_chat_card"
+                    <div v-for="(element, index) in arrayUtentiChat"
+                        :class="(index == indiceUtenteAttivo)? 'active' : '' " class="user_chat_card"
                         @click="cambioUtente(index)">
                         <div class="user_info">
                             <img class="img_users" :src="'img/' + arrayUtentiChat[index].imgUtente" alt="">
@@ -90,7 +91,9 @@
                         <img class="img_users" :src="'img/' + arrayUtentiChat[indiceUtenteAttivo].imgUtente" alt="">
                         <div>
                             <div class="name_user">{{ arrayUtentiChat[indiceUtenteAttivo].nome }}</div>
-                            <div class="last_message">Ultimo messaggio inviato alle {{arrayUtentiChat[indiceUtenteAttivo].chat[arrayUtentiChat[indiceUtenteAttivo].chat.length - 1].ora}}</div>
+                            <div class="last_message">Ultimo messaggio inviato alle
+                                {{arrayUtentiChat[indiceUtenteAttivo].chat[arrayUtentiChat[indiceUtenteAttivo].chat.length
+                                - 1].ora}}</div>
 
                         </div>
                     </div>
@@ -110,8 +113,10 @@
                             :key="element.messaggiRicevuti"
                             :class="(element.mittente == true) ? 'my_message' : 'your_message'">
                             <div> {{ element.testo }} </div> <span class="timing_message">{{ element.ora }}</span>
-                            <button @click="visibleDelete()" class="arrow"><i class="fa-solid fa-angle-down"></i></button>
-                            <div :class="(visible==true) ? 'block' : ''" @click="deleteMessage(index)" class="delete">Cancella messaggio</div>
+                            <button @click="visibleDelete(index)" class="arrow"><i
+                                    class="fa-solid fa-angle-down"></i></button>
+                            <div v-show="visible == index"  @click="deleteMessage(index)" class="delete">
+                                Cancella messaggio</div>
                         </li>
                     </ul>
                 </div>

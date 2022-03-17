@@ -1,7 +1,7 @@
 const app = new Vue({
     el: '#root',
     data: {
-        visible: false,
+        visible: -1,
         indiceUtenteAttivo: 0,
         newMessage: '',
         arrayUtentiChat: [
@@ -270,12 +270,11 @@ const app = new Vue({
         deleteMessage(index) {
             this.arrayUtentiChat[this.indiceUtenteAttivo].chat.splice(index, 1)
         },
-        visibleDelete() {
-
-            if (this.visible == false) {
-                this.visible = true;
-            } else {
-                this.visible = false;
+        visibleDelete(index) {
+            if(this.visible == -1){
+            this.visible = index}
+            else {
+                this.visible = -1
             }
         }
 
