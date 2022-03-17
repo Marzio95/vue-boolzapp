@@ -272,7 +272,7 @@ const app = new Vue({
         },
         visibleDelete(index) {
             if(this.visible == -1){
-            this.visible = index}
+            this.visible = this.arrayUtentiChat[this.indiceUtenteAttivo].chat[index]}
             else {
                 this.visible = -1
             }

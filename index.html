@@ -115,7 +115,7 @@
                             <div> {{ element.testo }} </div> <span class="timing_message">{{ element.ora }}</span>
                             <button @click="visibleDelete(index)" class="arrow"><i
                                     class="fa-solid fa-angle-down"></i></button>
-                            <div v-show="visible == index"  @click="deleteMessage(index)" class="delete">
+                            <div v-show="visible == arrayUtentiChat[indiceUtenteAttivo].chat[index]" @click="deleteMessage(index)" class="delete">
                                 Cancella messaggio</div>
                         </li>
                     </ul>
