@@ -1,6 +1,7 @@
 const app = new Vue({
     el: '#root',
     data: {
+        nomeRicercato: '',
         visible: -1,
         indiceUtenteAttivo: 0,
         newMessage: '',
@@ -8,6 +9,7 @@ const app = new Vue({
             {
                 nome: 'Michele',
                 imgUtente: 'avatar_1.jpg',
+                visibilità: true,
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
@@ -34,6 +36,8 @@ const app = new Vue({
             {
                 nome: 'Fabio',
                 imgUtente: 'avatar_2.jpg',
+                visibilità: true,
+
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
@@ -61,6 +65,8 @@ const app = new Vue({
             {
                 nome: 'Samuele',
                 imgUtente: 'avatar_3.jpg',
+                visibilità: true,
+
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
@@ -88,6 +94,8 @@ const app = new Vue({
             {
                 nome: 'Alessandro B.',
                 imgUtente: 'avatar_4.jpg',
+                visibilità: true,
+
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
@@ -115,6 +123,8 @@ const app = new Vue({
             {
                 nome: 'Alessandro L.',
                 imgUtente: 'avatar_5.jpg',
+                visibilità: true,
+
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
@@ -142,6 +152,8 @@ const app = new Vue({
             {
                 nome: 'Claudia',
                 imgUtente: 'avatar_6.jpg',
+                visibilità: true,
+
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
@@ -169,6 +181,8 @@ const app = new Vue({
             {
                 nome: 'Federico',
                 imgUtente: 'avatar_7.jpg',
+                visibilità: true,
+
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
@@ -198,6 +212,8 @@ const app = new Vue({
             {
                 nome: 'Davide',
                 imgUtente: 'avatar_8.jpg',
+                visibilità: true,
+
                 lastMessage: 'Ultimo messaggio inviato',
                 chat: [
                     {
@@ -271,11 +287,27 @@ const app = new Vue({
             this.arrayUtentiChat[this.indiceUtenteAttivo].chat.splice(index, 1)
         },
         visibleDelete(index) {
-            if(this.visible == -1){
-            this.visible = this.arrayUtentiChat[this.indiceUtenteAttivo].chat[index]}
+            if (this.visible == -1) {
+                this.visible = this.arrayUtentiChat[this.indiceUtenteAttivo].chat[index]
+            }
             else {
                 this.visible = -1
             }
+        },
+        ricercaNome() {
+        
+            this.arrayUtentiChat.forEach(element => {
+                if (!element.nome.toLowerCase().includes(this.nomeRicercato.toLowerCase())) {
+                    element.visibilità = false;
+                } 
+                if(this.nomeRicercato == ''){
+                    element.visibilità = true;
+                }
+                console.log(this.nomeRicercato)
+
+                
+
+            });
         }
 
     }
