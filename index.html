@@ -51,8 +51,10 @@
 
                 <!-- SEARCH BAR PER VARIE CHAT -->
                 <div class="search_bar">
-                    <button @click="ricercaNome" class="search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input @keyup="ricercaNome" v-model="nomeRicercato" type="text" name="search_user" id="search_user" placeholder="Cerca o inizia una nuova chat">
+                    <button @click="ricercaNome" class="search_button"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                    <input @keyup="ricercaNome" v-model="nomeRicercato" type="text" name="search_user" id="search_user"
+                        placeholder="Cerca o inizia una nuova chat">
                 </div>
 
 
@@ -68,12 +70,14 @@
                             <img class="img_users" :src="'img/' + arrayUtentiChat[index].imgUtente" alt="">
                             <div>
                                 <div class="name_user">{{ element.nome }}</div>
-                                <div class="last_message">{{ element.chat[element.chat.length - 1].testo }}</div>
-
+                                <div v-if="element.chat.length != 0" class="last_message">{{
+                                    element.chat[element.chat.length - 1].testo}}</div>
                             </div>
                         </div>
-                        <div class="time">{{ element.chat[element.chat.length - 1].ora }}</div>
+                        <div v-if="element.chat.length != 0" class="time">{{ element.chat[element.chat.length - 1].ora
+                            }}</div>
                     </div>
+                    <!-- v-if="contatto.arrayMessaggiChat.length != 0" -->
 
 
                 </div>
@@ -91,9 +95,11 @@
                         <img class="img_users" :src="'img/' + arrayUtentiChat[indiceUtenteAttivo].imgUtente" alt="">
                         <div>
                             <div class="name_user">{{ arrayUtentiChat[indiceUtenteAttivo].nome }}</div>
-                            <div class="last_message">Ultimo messaggio inviato alle
+                            <div v-if="arrayUtentiChat[indiceUtenteAttivo].chat.length != 0" class="last_message">Ultimo
+                                messaggio inviato alle
                                 {{arrayUtentiChat[indiceUtenteAttivo].chat[arrayUtentiChat[indiceUtenteAttivo].chat.length
-                                - 1].ora}}</div>
+                                - 1].ora}}
+                            </div>
 
                         </div>
                     </div>
@@ -115,7 +121,8 @@
                             <div> {{ element.testo }} </div> <span class="timing_message">{{ element.ora }}</span>
                             <button @click="visibleDelete(index)" class="arrow"><i
                                     class="fa-solid fa-angle-down"></i></button>
-                            <div v-show="visible == arrayUtentiChat[indiceUtenteAttivo].chat[index]" @click="deleteMessage(index)" class="delete">
+                            <div v-show="visible == arrayUtentiChat[indiceUtenteAttivo].chat[index]"
+                                @click="deleteMessage(index)" class="delete">
                                 Cancella messaggio</div>
                         </li>
                     </ul>
