@@ -221,12 +221,21 @@ button{
     cursor: pointer;
 }
 
+.my_message:hover .arrow{
+    visibility: visible;
+}
+
+.your_message:hover .arrow{
+    visibility: visible;
+}
+
 .arrow{
     border: none;
     background-color: transparent;
     position: absolute;
     top:3px;
     right: 8px;
+    visibility: hidden;
 }
 
 .delete{
