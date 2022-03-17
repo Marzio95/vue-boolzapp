@@ -239,4 +239,9 @@ button{
     top: 2rem;
     right: -1rem;
     z-index: 1312;
+    display: none;
+}
+
+.block{
+    display: block;
 }

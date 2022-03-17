@@ -110,8 +110,8 @@
                             :key="element.messaggiRicevuti"
                             :class="(element.mittente == true) ? 'my_message' : 'your_message'">
                             <div> {{ element.testo }} </div> <span class="timing_message">{{ element.ora }}</span>
-                            <button class="arrow"><i class="fa-solid fa-angle-down"></i></button>
-                            <div @click="deleteMessage(index)" class="delete">Cancella messaggio</div>
+                            <button @click="visibleDelete" class="arrow"><i class="fa-solid fa-angle-down"></i></button>
+                            <div :class="(visible==true) ? 'block' : ''" @click="deleteMessage(index)" class="delete">Cancella messaggio</div>
                         </li>
                     </ul>
                 </div>
