@@ -251,10 +251,6 @@ button{
     cursor: pointer;
 }
 
-.block{
-    display: block;
-}
-
 .relative{
     position: relative;
 }
@@ -270,6 +266,11 @@ button{
     top: 2rem;
     right: 1rem;
     cursor: pointer;
+    display: none;
+}
+
+.block{
+    display: block;
 }
 
 .three_points{

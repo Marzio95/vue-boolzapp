@@ -1,6 +1,7 @@
 const app = new Vue({
     el: '#root',
     data: {
+        deleteAllVisible: false,
         nomeRicercato: '',
         visible: -1,
         indiceUtenteAttivo: 0,
@@ -311,6 +312,15 @@ const app = new Vue({
         },
         deleteAll() {
             this.arrayUtentiChat[this.indiceUtenteAttivo].chat.splice(this.arrayUtentiChat[this.indiceUtenteAttivo].chat)
+            if(this.deleteAllVisible == true){
+                this.deleteAllVisible = false;}
+        },
+        visibleDeleteAll(){
+            if(this.deleteAllVisible == false){
+                this.deleteAllVisible = true;
+            }else {
+                this.deleteAllVisible = false;
+            }
         }
 
     }
