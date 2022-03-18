@@ -275,9 +275,6 @@ const app = new Vue({
 
         },
         messaggioRicevuto() {
-            if(this.newMessage==''){
-
-            }else{
             const now = new Date();
             const current = now.getHours() + ':' + now.getMinutes();
 
@@ -286,7 +283,7 @@ const app = new Vue({
                     testo: 'OK',
                     ora: current,
                     mittente: false,
-                });}
+                });
         },
         cambioUtente(index) {
             this.indiceUtenteAttivo = index;
