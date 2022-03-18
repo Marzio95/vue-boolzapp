@@ -17,7 +17,8 @@
 <body>
     <div class="container">
         <div :class="(openPage == false) ? 'openpage' : 'display_none_openpage'" class="openpage">Welcome to Boolzap
-            <br> BY M.D.R.</div>
+            <br> BY M.D.R.
+        </div>
         <div class="green_bar"></div>
         <div id="root">
 
@@ -110,8 +111,15 @@
                         <i class="icone fa-solid fa-link"></i>
                         <button @click="visibleDeleteAll" class="three_points"><i
                                 class="icone fa-solid fa-ellipsis-vertical"></i></button>
-                        <div @click="deleteAll()" class="delete_all" :class="(deleteAllVisible == true) ? 'block' : ''">
-                            Elimina tutti i messaggi
+                        <div class="options_delete">
+                            <div @click="deleteAll()" class="delete_all"
+                                :class="(deleteAllVisible == true) ? 'block' : ''">
+                                Elimina tutti i messaggi
+                            </div>
+                            <div @click="deleteChat()" class="delete_all"
+                                :class="(deleteAllVisible == true) ? 'block' : ''">
+                                Elimina la chat corrente
+                            </div>
                         </div>
                     </div>
                 </div>

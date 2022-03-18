@@ -262,6 +262,7 @@ button{
     visibility: hidden;
 }
 
+
 .delete{
     background-color: white;
     border: 1px solid black;
@@ -279,16 +280,20 @@ button{
     position: relative;
 }
 
-.delete_all{
+.options_delete{
     position: absolute;
+    top: 2rem;
+    right: 1rem;
+    z-index: 100000;
+}
+
+.delete_all{
     background-color: white;
     border: 1px solid black;
     width: 12rem;
     height: 2rem;
     line-height: 2rem;
     padding-left: 10px;
-    top: 2rem;
-    right: 1rem;
     cursor: pointer;
     display: none;
 }
