@@ -64,7 +64,7 @@
 
 
                 <!-- SEZIONE DIVERSE CHAT DEI DIVERSI UTENTI -->
-                <div class="users_chats">
+                <div v-if="arrayUtentiChat.length!==0" class="users_chats">
 
                     <div v-for="(element, index) in arrayUtentiChat"
                         :class="(index == indiceUtenteAttivo)? 'active' : '' " class="user_chat_card"
@@ -84,6 +84,7 @@
 
 
                 </div>
+                <div v-else class="users_chats" style="padding: 1rem; ">Non ci sono contatti presenti</div>
             </div>
 
 
@@ -93,7 +94,7 @@
 
 
                 <!-- SEZIONE UTENTE ATTIVO -->
-                <div class="user">
+                <div v-if="arrayUtentiChat.length!==0" class="user">
                     <div class="user_info">
                         <img class="img_users" :src="'img/' + arrayUtentiChat[indiceUtenteAttivo].imgUtente" alt="">
                         <div>
@@ -120,14 +121,19 @@
                                 :class="(deleteAllVisible == true) ? 'block' : ''">
                                 Elimina la chat corrente
                             </div>
+                            <div @click="deleteChatAll()" class="delete_all"
+                            :class="(deleteAllVisible == true) ? 'block' : ''">
+                            Elimina tutte le chat
+                        </div>
                         </div>
                     </div>
                 </div>
+                <div v-else class="user">Non ci sono contatti presenti</div>
 
 
 
                 <!-- CONTENITORE MESSAGGI  -->
-                <div class="container_messaggi">
+                <div v-if="arrayUtentiChat.length!==0" class="container_messaggi">
                     <ul class="lista_messaggi">
                         <li v-for="(element,index) in arrayUtentiChat[indiceUtenteAttivo].chat"
                             :key="element.messaggiRicevuti"
@@ -141,6 +147,7 @@
                         </li>
                     </ul>
                 </div>
+                <div v-else class="container_messaggi"></div>
 
 
 
@@ -149,7 +156,9 @@
                     <button class="emoticon_button"><i class="fa-regular fa-face-smile"></i></button>
                     <input @keyup.enter="messaggioInviato(indiceUtenteAttivo)" v-model="newMessage" type="text"
                         name="write_message" id="write_message" placeholder="Scrivi un messaggio">
-                    <button class="emoticon_button"><i class="fa-solid fa-microphone"></i></button>
+                    <button v-if="newMessage==''" class="emoticon_button"><i class="fa-solid fa-microphone"></i></button>
+                    <button v-else class="emoticon_button"><i class="fa-solid fa-paper-plane"></i></button>
+
                 </div>
             </div>
 
