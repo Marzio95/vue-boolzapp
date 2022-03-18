@@ -254,3 +254,25 @@ button{
 .block{
     display: block;
 }
+
+.relative{
+    position: relative;
+}
+
+.delete_all{
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    width: 12rem;
+    height: 2rem;
+    line-height: 2rem;
+    padding-left: 10px;
+    top: 2rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.three_points{
+    border: none;
+    background-color: transparent;
+}

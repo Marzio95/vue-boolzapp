@@ -103,10 +103,13 @@
 
                         </div>
                     </div>
-                    <div class="icons">
+                    <div class="icons relative">
                         <i class="icone fa-solid fa-magnifying-glass"></i>
                         <i class="icone fa-solid fa-link"></i>
-                        <i class="icone fa-solid fa-ellipsis-vertical"></i>
+                        <button class="three_points"><i class="icone fa-solid fa-ellipsis-vertical"></i></button> 
+                        <div @click="deleteAll()" class="delete_all">
+                            Elimina tutti i messaggi
+                        </div>
                     </div>
                 </div>
 

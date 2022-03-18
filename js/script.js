@@ -308,6 +308,9 @@ const app = new Vue({
                 
 
             });
+        },
+        deleteAll() {
+            this.arrayUtentiChat[this.indiceUtenteAttivo].chat.splice(this.arrayUtentiChat[this.indiceUtenteAttivo].chat)
         }
 
     }
