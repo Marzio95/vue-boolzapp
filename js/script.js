@@ -1,6 +1,7 @@
 const app = new Vue({
-    el: '#root',
+    el: '.container',
     data: {
+        openPage: false,
         deleteAllVisible: false,
         nomeRicercato: '',
         visible: -1,
@@ -304,10 +305,7 @@ const app = new Vue({
                 if(this.nomeRicercato == ''){
                     element.visibilità = true;
                 }
-                console.log(this.nomeRicercato)
-
-                
-
+               
             });
         },
         deleteAll() {
@@ -321,9 +319,15 @@ const app = new Vue({
             }else {
                 this.deleteAllVisible = false;
             }
-        }
-
-    }
+        },
+       
+    },
+    
+    mounted: function () {
+        this.intervalid1 = setInterval(() => {
+            this.openPage = true;
+        }, 3000); 
+    },     
 
 }
 )
