@@ -248,6 +248,7 @@ const app = new Vue({
 
     }, methods: {
         messaggioInviato(indiceUtenteAttivo) {
+            if(this.arrayUtentiChat.length!==0){
             const now = new Date();
             const current = now.getHours() + ':' + now.getMinutes();
 
@@ -266,6 +267,9 @@ const app = new Vue({
 
 
             setTimeout(this.messaggioRicevuto, 1000);
+        }else{
+            this.newMessage='Non ci sono contatti presenti'
+        }
 
 
 
