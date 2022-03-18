@@ -297,37 +297,38 @@ const app = new Vue({
             }
         },
         ricercaNome() {
-        
+
             this.arrayUtentiChat.forEach(element => {
                 if (!element.nome.toLowerCase().includes(this.nomeRicercato.toLowerCase())) {
                     element.visibilità = false;
-                } 
-                if(this.nomeRicercato == ''){
+                }
+                if (this.nomeRicercato == '') {
                     element.visibilità = true;
                 }
-               
+
             });
         },
         deleteAll() {
             this.arrayUtentiChat[this.indiceUtenteAttivo].chat.splice(this.arrayUtentiChat[this.indiceUtenteAttivo].chat)
-            if(this.deleteAllVisible == true){
-                this.deleteAllVisible = false;}
-        },
-        visibleDeleteAll(){
-            if(this.deleteAllVisible == false){
-                this.deleteAllVisible = true;
-            }else {
+            if (this.deleteAllVisible == true) {
                 this.deleteAllVisible = false;
             }
         },
-       
+        visibleDeleteAll() {
+            if (this.deleteAllVisible == false) {
+                this.deleteAllVisible = true;
+            } else {
+                this.deleteAllVisible = false;
+            }
+        },
+
     },
-    
+
     mounted: function () {
-        this.intervalid1 = setInterval(() => {
+        setTimeout(() => {
             this.openPage = true;
-        }, 3000); 
-    },     
+        }, 3000);
+    },
 
 }
 )
