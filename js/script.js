@@ -332,7 +332,7 @@ const app = new Vue({
             }
         },
         deleteChatAll(){
-            this.arrayUtentiChat.splice(this.indiceUtenteAttivo)
+            this.arrayUtentiChat.splice(this.indiceUtenteAttivo.length)
             if (this.deleteAllVisible == true) {
                 this.deleteAllVisible = false;
             }
